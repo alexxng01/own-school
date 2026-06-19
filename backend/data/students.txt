@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1752973571438,
+    "name": "rahul",
+    "email": "rm91275@gmail.com",
+    "phone": "+9779819640",
+    "class": "a16",
+    "rollNumber": "12",
+    "parentName": "ram",
+    "parentPhone": "98198",
+    "address": " jambfa",
+    "createdAt": "2025-07-20T01:06:11.438Z",
+    "status": "active"
+  }
+]

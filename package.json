@@ -1,0 +1,37 @@
+{
+  "name": "school-management-system",
+  "version": "1.0.0",
+  "description": "Complete School Management System with Frontend and Backend",
+  "main": "index.js",
+  "scripts": {
+    "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:frontend": "cd frontend && npm start",
+    "start:backend": "cd backend && npm start",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "cd frontend && npm start",
+    "dev:backend": "cd backend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "test": "cd frontend && npm test",
+    "export": "cd backend && npm run export",
+    "migrate": "cd backend && npm run migrate",
+    "db:setup": "cd backend && npm run migrate",
+    "db:reset": "cd backend && npm run migrate"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "school",
+    "management",
+    "fullstack",
+    "react",
+    "node",
+    "mongodb"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "postcss-preset-env": "^11.2.0"
+  }
+}

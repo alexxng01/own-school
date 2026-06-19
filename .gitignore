@@ -1,0 +1,71 @@
+# .gitignore - standard for Node / React projects
+
+# Node dependencies
+node_modules/
+*/node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Production / build output
+dist/
+build/
+frontend/build/
+frontend/dist/
+.next/
+out/
+
+# Environment variables
+.env
+.env.*.local
+
+# Dependency cache and lock stores
+.npm/
+.pnpm-store/
+.yarn/
+.yarn-cache/
+
+# Coverage directory
+coverage/
+*.lcov
+.nyc_output/
+
+# Parcel / Next / Gatsby caches
+.cache/
+.parcel-cache/
+public/
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+
+# Misc
+*.tgz
+
+# Optional: uncomment to ignore lockfiles (if you prefer not to commit them)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
