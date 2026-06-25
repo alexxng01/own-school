@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { backendStorage as localStorage } from '../utils/backendStorage';
 import { useAuth, useAccounts } from '../context/AuthContext';
 import { getProfileImage, saveProfileImage, isValidImageData } from '../utils/fileStorage';
 import { Camera, Edit3, Save, X } from 'lucide-react';

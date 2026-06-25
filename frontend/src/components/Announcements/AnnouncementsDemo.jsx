@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AnnouncementList, RecentAnnouncementsWidget } from './index';
+import { backendStorage as localStorage } from '../../utils/backendStorage';
 
 /**
  * Demo Component for Testing Announcements System

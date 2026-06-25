@@ -3,6 +3,8 @@
  * This saves data to browser localStorage only (frontend-safe)
  */
 
+import { backendStorage } from './backendStorage';
+
 // File paths for different data types
 const FILE_PATHS = {
   STUDENTS: 'students.txt',
@@ -18,7 +20,7 @@ const FILE_PATHS = {
 export const writeToFile = (filename, data) => {
   try {
     const fileData = JSON.stringify(data, null, 2);
-    localStorage.setItem(`file_${filename}`, fileData);
+    backendStorage.setItem(`file_${filename}`, fileData);
     console.log(`Data written to ${filename}:`, data);
     return true;
   } catch (error) {
@@ -34,7 +36,7 @@ export const writeToFile = (filename, data) => {
  */
 export const readFromFile = (filename) => {
   try {
-    const fileData = localStorage.getItem(`file_${filename}`);
+    const fileData = backendStorage.getItem(`file_${filename}`);
     if (fileData) {
       return JSON.parse(fileData);
     }
@@ -140,7 +142,7 @@ export const getProfileImage = (userId) => {
   if (!userId) return null;
   
   try {
-    const imageData = localStorage.getItem(`profileImage_${userId}`);
+    const imageData = backendStorage.getItem(`profileImage_${userId}`);
     if (imageData && imageData.startsWith('data:image')) {
       return imageData;
     }
@@ -162,7 +164,7 @@ export const saveProfileImage = (userId, imageData) => {
   
   try {
     if (imageData.startsWith('data:image')) {
-      localStorage.setItem(`profileImage_${userId}`, imageData);
+      backendStorage.setItem(`profileImage_${userId}`, imageData);
       return true;
     }
     return false;
@@ -181,7 +183,7 @@ export const removeProfileImage = (userId) => {
   if (!userId) return false;
   
   try {
-    localStorage.removeItem(`profileImage_${userId}`);
+    backendStorage.removeItem(`profileImage_${userId}`);
     return true;
   } catch (error) {
     console.error(`Error removing profile image for ${userId}:`, error);

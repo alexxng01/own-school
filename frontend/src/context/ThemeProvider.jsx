@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import themeConfig, { generateCSSVariables } from '../utils/themeConfig';
+import { backendStorage } from '../utils/backendStorage';
 
 const ThemeContext = createContext();
 
@@ -13,8 +14,8 @@ export const useTheme = () => {
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
-    // Get saved theme from localStorage or default to 'light'
-    const savedTheme = localStorage.getItem('theme');
+    // Get saved theme from backendStorage or default to 'light'
+    const savedTheme = backendStorage.getItem('theme');
     return savedTheme || 'light';
   });
 
@@ -32,8 +33,8 @@ export const ThemeProvider = ({ children }) => {
     document.documentElement.classList.toggle('dark', theme === 'dark');
     document.documentElement.setAttribute('data-theme', theme);
 
-    // Save theme to localStorage
-    localStorage.setItem('theme', theme);
+    // Save theme to backendStorage
+    backendStorage.setItem('theme', theme);
   }, [theme]);
 
   // Toggle between light and dark themes

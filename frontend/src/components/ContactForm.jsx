@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, User, MessageSquare } from 'lucide-react';
+import { backendStorage as localStorage } from '../utils/backendStorage';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({

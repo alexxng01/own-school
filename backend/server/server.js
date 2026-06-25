@@ -23,6 +23,7 @@ app.use('/api/auth', require('../routes/auth'));
 app.use('/api/students', require('../routes/students'));
 app.use('/api/teachers', require('../routes/teachers'));
 app.use('/api/contact', require('../routes/contact'));
+app.use('/api/items', require('../routes/items'));
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
@@ -66,4 +67,6 @@ process.on('SIGTERM', () => {
 process.on('SIGINT', () => {
   console.log('SIGINT received, shutting down gracefully');
   process.exit(0);
-}); 
+});
+
+module.exports = app; 

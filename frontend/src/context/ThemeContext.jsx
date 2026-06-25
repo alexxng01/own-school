@@ -1,11 +1,12 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { backendStorage } from '../utils/backendStorage';
 
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
     if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('theme');
+      const saved = backendStorage.getItem('theme');
       if (saved) return saved === 'dark';
       // Default: match system
       return window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -15,7 +16,7 @@ export const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', isDarkMode);
-    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    backendStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
   }, [isDarkMode]);
 
   const toggleDarkMode = () => setIsDarkMode((prev) => !prev);

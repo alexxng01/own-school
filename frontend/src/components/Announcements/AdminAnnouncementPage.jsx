@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Plus, AlertCircle } from 'lucide-react';
 import { AnnouncementForm, AnnouncementList } from './index';
+import { backendStorage as localStorage } from '../../utils/backendStorage';
 
 /**
  * AdminAnnouncementPage Component

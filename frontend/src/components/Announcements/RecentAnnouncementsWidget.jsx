@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Bell, ChevronRight } from 'lucide-react';
 import { AnnouncementCard } from './AnnouncementCard';
+import { backendStorage as localStorage } from '../../utils/backendStorage';
 
 /**
  * RecentAnnouncementsWidget Component
