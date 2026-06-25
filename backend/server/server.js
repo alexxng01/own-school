@@ -49,14 +49,16 @@ app.use('*', (req, res) => {
   res.status(404).json({ message: 'Route not found' });
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log('🚀 School Management System Backend Server');
-  console.log(`📡 Server running on http://localhost:${PORT}`);
-  console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
-  console.log(`📊 Database: MongoDB`);
-  console.log(`🔌 CORS Origin: ${process.env.CORS_ORIGIN || 'http://localhost:3000'}`);
-});
+// Start server (only if not running on Vercel)
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log('🚀 School Management System Backend Server');
+    console.log(`📡 Server running on http://localhost:${PORT}`);
+    console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
+    console.log(`📊 Database: MongoDB`);
+    console.log(`🔌 CORS Origin: ${process.env.CORS_ORIGIN || 'http://localhost:3000'}`);
+  });
+}
 
 // Graceful shutdown
 process.on('SIGTERM', () => {
